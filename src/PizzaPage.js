@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
 import PizzaDex from './PizzaDex';
+import M from 'materialize-css';
 
 class PizzaPage extends Component {
 	state = {
