@@ -7,10 +7,10 @@ class UserIndex extends Component {
 
 
 	renderUsers = () => {
-		return this.props.users.map((user) => {
+		return this.props.slices.map((ps) => {
 			return (
 				<li>
-				<User user={user}/>
+				<User user={ps}/>
 				</li>
 		);
 		})
