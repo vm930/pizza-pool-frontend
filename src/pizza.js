@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import User from './User';
+import UserIndex from './UserIndex';
 
 class Pizza extends Component {
 	render() {
@@ -19,7 +19,7 @@ class Pizza extends Component {
 						<i className="heart outline like icon" />
 						Who's eating This bad boi:
 					</span>
-					<User users={this.props.pizza.users} />
+					<UserIndex users={this.props.pizza.users} />
 					<i className="comment icon" />
 					0 comments
 				</div>
