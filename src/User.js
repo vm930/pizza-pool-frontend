@@ -5,7 +5,7 @@ class User extends Component {
   render(){
     return (
       <div>
-        {this.props.user.name}
+        {this.props.user.user_name} - Slices: {this.props.user.slices}
       </div>
     )
   }
