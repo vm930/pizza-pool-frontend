@@ -4,7 +4,7 @@ import Pizza from './pizza';
 class PizzaDex extends Component {
 	render() {
 		return (
-			<div>
+			<div className="container">
 				{this.props.pizzas.map((pizza) => {
 					return <Pizza pizza={pizza} />;
 				})}

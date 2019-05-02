@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
 import PizzaDex from './PizzaDex';
-import M from 'materialize-css';
+import M from 'materialize-css'; //important for css
+import NewPizza from './NewPizza';
 
 class PizzaPage extends Component {
 	state = {
-		pizzas: []
+		pizzas: [],
+		newPizzas: []
 	};
 
 	componentDidMount() {
@@ -20,6 +22,7 @@ class PizzaPage extends Component {
 		return (
 			<div>
 				<Nav />
+				<NewPizza />
 				<PizzaDex pizzas={this.state.pizzas} />
 			</div>
 		);
