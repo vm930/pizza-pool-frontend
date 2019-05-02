@@ -1,0 +1,28 @@
+import React, { Component } from 'react';
+import Nav from './Nav';
+import PizzaDex from './PizzaDex';
+
+class PizzaPage extends Component {
+	state = {
+		pizzas: []
+	};
+
+	componentDidMount() {
+		fetch('http://localhost:3000/pizzas').then((res) => res.json()).then((data) =>
+			this.setState({
+				pizzas: data
+			})
+		);
+	}
+	render() {
+		// console.log(this.state.pizzas);
+		return (
+			<div>
+				<Nav />
+				<PizzaDex />
+			</div>
+		);
+	}
+}
+
+export default PizzaPage;
