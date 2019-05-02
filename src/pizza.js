@@ -19,7 +19,7 @@ class Pizza extends Component {
 						<i className="heart outline like icon" />
 						Who's eating This bad boi:
 					</span>
-					<User users={this.props.users} />
+					<User users={this.props.pizza.users} />
 					<i className="comment icon" />
 					0 comments
 				</div>
