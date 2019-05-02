@@ -19,7 +19,7 @@ class PizzaPage extends Component {
 		return (
 			<div>
 				<Nav />
-				<PizzaDex />
+				<PizzaDex pizzas={this.state.pizzas} />
 			</div>
 		);
 	}

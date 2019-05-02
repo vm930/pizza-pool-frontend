@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import User from './User';
 
 class Pizza extends Component {
 	render() {
@@ -9,15 +10,16 @@ class Pizza extends Component {
 						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdj2sMYwRV7t0kF9DKH6LrKDFeQdW1SNIZh3fUgwmH-1TcXu"
 						alt="picture of a pizza"
 					/>
-					<span className="left floated">Pizzas:</span>
-					<span className="left floated">classic old </span>
+					<span>Pizza:</span>
+					<span>{this.props.pizza.name}</span>
 				</div>
 				<br />
 				<div className="extra content">
 					<span className="right floated">
 						<i className="heart outline like icon" />
-						im a pizza
+						Who's eating This bad boi:
 					</span>
+					<User users={this.props.users} />
 					<i className="comment icon" />
 					0 comments
 				</div>
