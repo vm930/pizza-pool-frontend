@@ -2,7 +2,27 @@ import React, { Component } from 'react';
 
 class Pizza extends Component {
 	render() {
-		return <div />;
+		return (
+			<div>
+				<div className="content">
+					<img
+						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdj2sMYwRV7t0kF9DKH6LrKDFeQdW1SNIZh3fUgwmH-1TcXu"
+						alt="picture of a pizza"
+					/>
+					<span className="left floated">Pizzas:</span>
+					<span className="left floated">classic old </span>
+				</div>
+				<br />
+				<div className="extra content">
+					<span className="right floated">
+						<i className="heart outline like icon" />
+						im a pizza
+					</span>
+					<i className="comment icon" />
+					0 comments
+				</div>
+			</div>
+		);
 	}
 }
 

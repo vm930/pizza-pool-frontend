@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import Pizza from './pizza';
 
 class PizzaDex extends Component {
 	render() {
-		return <div>i'm PizzaDex</div>;
+		return (
+			<div>
+				<Pizza />
+			</div>
+		);
 	}
 }
 
