@@ -4,22 +4,20 @@ import UserIndex from './UserIndex';
 class Pizza extends Component {
 	render() {
 		return (
-			<div>
-				<div className="content">
+			<div className="container" className="row" className="col s12 m6">
+				<div className="container">
+					<span>Pizza: {this.props.pizza.name}</span>
 					<img
 						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdj2sMYwRV7t0kF9DKH6LrKDFeQdW1SNIZh3fUgwmH-1TcXu"
 						alt="picture of a pizza"
 					/>
-					<span>Pizza:</span>
-					<span>{this.props.pizza.name}</span>
 				</div>
-				<br />
-				<div className="extra content">
-					<span className="right floated">
-						<i className="heart outline like icon" />
-						Who's eating This bad boi:
+
+				<div className="container">
+					<span>Who's eating This bad boi:</span>
+					<span>
+						<UserIndex slices={this.props.pizza.pizza_slices} />
 					</span>
-					<UserIndex slices={this.props.pizza.pizza_slices} />
 					<i className="comment icon" />
 					0 comments
 				</div>

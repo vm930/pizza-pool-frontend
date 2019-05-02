@@ -18,27 +18,26 @@ class PizzaPage extends Component {
 		);
 	}
 
-
 	addPizza = (newPizza) => {
-    fetch('http://localhost:3000/pizzas', {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(newPizza)
-    })
-    .then(res => res.json())
-    .then(response =>
-    this.setState({
-      pizzas: [...this.state.pizzas, response]
-    	})
-  	)
-  }
+		fetch('http://localhost:3000/pizzas', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(newPizza)
+		})
+			.then((res) => res.json())
+			.then((response) =>
+				this.setState({
+					pizzas: [ ...this.state.pizzas, response ]
+				})
+			);
+	};
 
 	render() {
 		// console.log(this.state.pizzas);
 		return (
 			<div>
 				<Nav />
-				<NewPizza addPizza={this.addPizza}/>
+				<NewPizza addPizza={this.addPizza} />
 				<PizzaDex pizzas={this.state.pizzas} />
 			</div>
 		);
