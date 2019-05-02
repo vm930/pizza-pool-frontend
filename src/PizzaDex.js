@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Pizza from './Pizza';
+import Pizza from './pizza';
 
 class PizzaDex extends Component {
 	render() {
