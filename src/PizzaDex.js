@@ -6,7 +6,7 @@ class PizzaDex extends Component {
 		return (
 			<div className="container" className="col s12 m12">
 				{this.props.pizzas.map((pizza) => {
-					return <Pizza pizza={pizza} />;
+					return <Pizza pizza={pizza} getPizza={this.props.getPizza} currentUser={this.props.currentUser} />;
 				})}
 			</div>
 		);

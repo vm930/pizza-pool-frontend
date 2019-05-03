@@ -2,12 +2,16 @@ import React from 'react';
 import './App.css';
 import PizzaPage from './PizzaPage';
 import 'materialize-css/dist/css/materialize.min.css';
+import LogIn from './LogIn';
 
 class App extends React.Component {
 	//this is adding materialized to React
 	constructor() {
 		super();
 		this.M = window.M;
+		this.state = {
+			user: null
+		};
 	}
 
 	componentDidMount() {
@@ -17,10 +21,31 @@ class App extends React.Component {
 		var instances1 = this.M.ScrollSpy.init(elems2);
 	}
 
+	getUser = (userInput) => {
+		// console.log(userInput);
+		fetch('http://localhost:3000/login/', {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				user: { name: userInput }
+			})
+		})
+			.then((res) => res.json())
+			.then((json) => {
+				this.setState({
+					user: json
+				});
+			});
+	};
+
 	render() {
 		return (
 			<div>
-				<PizzaPage />
+				<LogIn getUser={this.getUser} />
+				<PizzaPage currentUser={this.state.user} />
 			</div>
 		);
 	}

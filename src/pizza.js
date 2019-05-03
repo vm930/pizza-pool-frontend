@@ -4,10 +4,11 @@ import Timer from './Timer';
 
 class Pizza extends React.PureComponent {
 
-	componentDidUpdate(prevProps, prevState) {
-		console.log("update")
-	}
 
+	handleClick = (e) => {
+		// console.log(this.props.pizza);
+		this.props.getPizza(this.props.pizzas)
+    
 	render() {
 		return (
 			<div className="container" className="row" className="col s12 m6">
@@ -28,6 +29,10 @@ class Pizza extends React.PureComponent {
 					<i className="comment icon" />
 					0 comments
 				</div>
+
+				<button onClick={this.handleClick} className="container waves-effect waves-light btn-large deep-orange">
+					I want a Slice!
+				</button>
 			</div>
 		);
 	}
