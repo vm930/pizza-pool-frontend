@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import UserIndex from './UserIndex';
+import Timer from './Timer';
 
-class Pizza extends Component {
+class Pizza extends React.PureComponent {
+
+	componentDidUpdate(prevProps, prevState) {
+		console.log("update")
+	}
+
 	render() {
 		return (
 			<div className="container" className="row" className="col s12 m6">
 				<div className="container">
+					<Timer />
 					<span>Pizza: {this.props.pizza.name}</span>
 					<img
 						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdj2sMYwRV7t0kF9DKH6LrKDFeQdW1SNIZh3fUgwmH-1TcXu"
