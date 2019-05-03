@@ -27,7 +27,7 @@ class PizzaPage extends Component {
 			.then((res) => res.json())
 			.then((response) =>
 				this.setState({
-					pizzas: [ ...this.state.pizzas, response ]
+					pizzas: [ ...this.state.pizzas, response]
 				})
 			);
 	};

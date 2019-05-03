@@ -21,14 +21,21 @@ class NewPizza extends Component {
 		const newPizza = {name: this.state.pizzaName,
 			price: this.state.price,
 			vegan: this.state.vegan,
-			pizza_slices: [
+			pizza_slices:
 					{
 					slices: this.state.wantedSlices,
 					user_name: this.state.userName
 					}
-				]
 			}
 		this.props.addPizza(newPizza)
+
+		this.setState({
+			userName: '',
+			pizzaName: '',
+			wantedSlices: 1,
+			vegan: false,
+			price: 0
+		})
 	};
 
 	render() {
