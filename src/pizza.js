@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import UserIndex from './UserIndex';
 
 class Pizza extends Component {
+	handleClick = (e) => {
+		// console.log(this.props.pizza);
+		this.props.getPizza(this.props.pizza);
+	};
 	render() {
 		return (
 			<div className="container" className="row" className="col s12 m6">
@@ -21,6 +25,10 @@ class Pizza extends Component {
 					<i className="comment icon" />
 					0 comments
 				</div>
+
+				<button onClick={this.handleClick} className="container waves-effect waves-light btn-large deep-orange">
+					I want a Slice!
+				</button>
 			</div>
 		);
 	}
