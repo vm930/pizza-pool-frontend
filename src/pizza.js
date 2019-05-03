@@ -3,12 +3,10 @@ import UserIndex from './UserIndex';
 import Timer from './Timer';
 
 class Pizza extends React.PureComponent {
-
-
 	handleClick = (e) => {
 		// console.log(this.props.pizza);
-		this.props.getPizza(this.props.pizzas)
-    
+		this.props.getPizza(this.props.pizza);
+	};
 	render() {
 		return (
 			<div className="container" className="row" className="col s12 m6">
