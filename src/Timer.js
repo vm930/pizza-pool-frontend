@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Countdown from 'react-countdown-now';
 
 
-class Timer extends Component {
+class Timer extends React.PureComponent {
 
   state = {
     delivered: false

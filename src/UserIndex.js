@@ -7,6 +7,7 @@ class UserIndex extends Component {
 
 
 	renderUsers = () => {
+		console.log('user slices', this.props.slices)
 		return this.props.slices.map((ps) => {
 			return (
 				<li>
@@ -20,7 +21,6 @@ class UserIndex extends Component {
 
 
 	render() {
-		console.log(this.userObject)
 		return (
 			<div>
 			<ul>
