@@ -81,7 +81,8 @@ class NewPizza extends Component {
 						This Pizza Belongs to:{' '}
 						<input name="userName" type="text" value={this.state.userName} onChange={this.handleChange} />
 					</label>
-					<input type="submit" value="Submit" />
+
+					<input type="submit" class="btn waves-effect waves-light deep-orange " value="Submit" />
 				</form>
 			</div>
 		);
