@@ -7,9 +7,11 @@ class Pizza extends React.PureComponent {
 
 	handleClick = (e) => {
 		// console.log(this.props.pizza);
-		this.props.getPizza(this.props.pizzas)
-    
+		this.props.getPizza(this.props.pizza)
+	}
+
 	render() {
+		console.log(this.props)
 		return (
 			<div className="container" className="row" className="col s12 m6">
 				<div className="container">
@@ -37,5 +39,6 @@ class Pizza extends React.PureComponent {
 		);
 	}
 }
+
 
 export default Pizza;

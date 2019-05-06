@@ -33,7 +33,6 @@ class PizzaPage extends Component {
 	};
 
 	getPizza = (pizzaClicked) => {
-		console.log(pizzaClicked, this.props.currentUser);
 
 		//update the pizzaslices
 		const foundPizza = this.state.pizzas.find((pizza) => pizza.id === pizzaClicked.id);
@@ -54,6 +53,19 @@ class PizzaPage extends Component {
 				);
 				const newSlices = [ ...pizza.pizza_slices ];
 				if (pizzaIndex > -1) {
+					fetch(`http://localhost:3000/pizza_slices/${newSlices[pizzaIndex].id}`, {
+						method: 'PATCH',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({name: foundPizza.Name,
+							price: foundPizza.price,
+							vegan: foundPizza.vegan,
+							pizza_slices:
+									{
+									slices: newSlices[pizzaIndex].slices + 1,
+									user_name: this.props.currentUser.name
+									}
+							})
+					})
 					const replaceSlice = { ...newSlices[pizzaIndex], slices: newSlices[pizzaIndex].slices + 1 };
 
 					newSlices[pizzaIndex] = replaceSlice;
@@ -68,13 +80,33 @@ class PizzaPage extends Component {
 					// 	slices: 1,
 					// 	user_name: this.props.currentUser
 					// });
+				}else{
+					const newPizzaSlice =  fetch('http://localhost:3000/pizza_slices', {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify({user_id: this.props.currentUser.id,
+						pizza_id: pizzaClicked.id})
+					})
+					newSlices.push({slices: 1, user_name: this.props.currentUser.name})
+					console.log('pizzaslices', newSlices)
+
+					return { ...pizza, pizza_slices: newSlices };
+
+						// this.addPizza({name: foundPizza.Name,
+						// 	price: foundPizza.price,
+						// 	vegan: foundPizza.vegan,
+						// 	pizza_slices:
+						// 			{
+						// 			slices: 1,
+						// 			user_name: this.props.currentUser.name
+						// 			}
+						// 	})
 				}
 			} else {
 				return pizza;
 			}
 		});
 
-		console.log(newPizzas);
 
 		this.setState({
 			pizzas: newPizzas
@@ -99,7 +131,6 @@ class PizzaPage extends Component {
 	};
 
 	render() {
-		console.log(this.state.pizzas);
 
 		return (
 			<div>
