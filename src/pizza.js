@@ -5,13 +5,12 @@ import Timer from './Timer';
 class Pizza extends React.PureComponent {
 	handleClick = (e) => {
 		// console.log(this.props.pizza);
-		this.props.getPizza(this.props.pizza)
+		this.props.getPizza(this.props.pizza);
 	};
 
 	render() {
-		const pizzaSliceArray = this.props.pizza.pizza_slices.map(pizza => pizza.slices)
+		const pizzaSliceArray = this.props.pizza.pizza_slices.map((pizza) => pizza.slices);
 		const reducer = (accumulator, currentValue) => accumulator + currentValue;
-		pizzaSliceArray.reduce(reducer)
 		return (
 			<div className="container" className="row" className="col s12 m6">
 				<div className="container">
@@ -29,16 +28,20 @@ class Pizza extends React.PureComponent {
 						<UserIndex slices={this.props.pizza.pizza_slices} />
 					</span>
 					<i className="comment icon" />
-					Slices Remaining: {8 - 	pizzaSliceArray.reduce(reducer)}
+					Slices Remaining: {8 - pizzaSliceArray.reduce(reducer)}
 				</div>
 
-				{8 - 	pizzaSliceArray.reduce(reducer) > 0 ? <button onClick={this.handleClick} className="container waves-effect waves-light btn-large deep-orange">
-					I want a Slice!
-				</button> : null}
+				{8 - pizzaSliceArray.reduce(reducer, 0) > 0 ? (
+					<button
+						onClick={this.handleClick}
+						className="container waves-effect waves-light btn-large deep-orange"
+					>
+						I want a Slice!
+					</button>
+				) : null}
 			</div>
 		);
 	}
 }
-
 
 export default Pizza;
