@@ -8,13 +8,21 @@ class Pizza extends React.PureComponent {
 		this.props.getPizza(this.props.pizza);
 	};
 
+	fetchDelete = () => {
+		fetch(`http://localhost:3000/pizzas/${this.props.pizza.id}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(this.props.pizza)
+    })
+	}
+
 	render() {
 		const pizzaSliceArray = this.props.pizza.pizza_slices.map((pizza) => pizza.slices);
 		const reducer = (accumulator, currentValue) => accumulator + currentValue;
 		return (
 			<div className="container" className="row" className="col s12 m6">
 				<div className="container">
-					<Timer />
+					<Timer fetchDelete={this.fetchDelete} />
 					<span>Pizza: {this.props.pizza.name}</span>
 					<img
 						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdj2sMYwRV7t0kF9DKH6LrKDFeQdW1SNIZh3fUgwmH-1TcXu"
