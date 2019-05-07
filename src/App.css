@@ -77,12 +77,13 @@ h3 {
 	content: '';
 }
 
-.loading-text {
+#loading-text {
 	position: relative;
 	z-index: 1;
 	font-size: 1.5rem;
 	font-family: 'Alfa Slab One', cursive;
 	margin-left: 0.5em;
+	color: black;
 }
 
 .ReactModal__Overlay {
@@ -416,4 +417,32 @@ h3 {
 		margin-top: 30%;
 		margin-left: 80%;
 	}
+}
+
+.card {
+	width: 400px;
+}
+
+.card-content {
+	text-align: center;
+}
+
+.pizzaIndex {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.pizzaContainer {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn-large {
+	width: 50%;
+}
+
+.timerContainer {
+	color: #dd2c00;
 }

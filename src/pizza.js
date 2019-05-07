@@ -24,36 +24,49 @@ class Pizza extends React.PureComponent {
 		const pizzaSliceArray = this.props.pizza.pizza_slices.map((pizza) => pizza.slices);
 		const reducer = (accumulator, currentValue) => accumulator + currentValue;
 		return (
-			<div className="container" className="row" className="col s12 m6">
-				<div className="container">
+			<div className="pizzaContainer">
+				<div className="timerContainer">
 					<Timer fetchDelete={this.fetchDelete} />
 					<br />
 					<div class="loading-container">
 						<div class="spinner" />
 						<div class="spinner-center" />
-						<div class="loading-text">{this.props.pizza.name}</div>
+						<div id="loading-text">{this.props.pizza.name}</div>
 					</div>
 				</div>
-
-				<div className="sliceInfo" className="container">
-					<span>Who's eating This bad boi:</span>
-					<span>
-						<UserIndex slices={this.props.pizza.pizza_slices} />
-					</span>
-					<p>Slices Remaining: {8 - pizzaSliceArray.reduce(reducer)}</p>
-					<p>Price per Slice: ${(this.props.pizza.price / pizzaSliceArray.reduce(reducer)).toFixed(2)}</p>
-				</div>
-
-				{8 - pizzaSliceArray.reduce(reducer, 0) > 0 ? (
-					<div className="sliceButton">
-						<button
-							onClick={this.handleClick}
-							className="container waves-effect waves-light btn-large deep-orange"
-						>
-							I want a Slice!
-						</button>
+				<div class="card">
+					<div className="sliceInfo">
+						<div class="card-content">
+							<span>Who's eating This bad boi:</span>
+							<span>
+								<UserIndex slices={this.props.pizza.pizza_slices} />
+							</span>
+							<p>Slices Remaining: {8 - pizzaSliceArray.reduce(reducer)}</p>
+							<p>
+								Price per Slice: ${(this.props.pizza.price / pizzaSliceArray.reduce(reducer)).toFixed(
+									2
+								)}
+							</p>
+						</div>
 					</div>
-				) : null}
+
+					{8 - pizzaSliceArray.reduce(reducer, 0) > 0 ? (
+						<div className="sliceButton">
+							<button
+								onClick={this.handleClick}
+								className="container waves-effect waves-light btn-large deep-orange"
+							>
+								I want a Slice!
+							</button>
+						</div>
+					) : (
+						<div className="sliceButton">
+							<button className="container waves-effect waves-light btn-large deep-orange lighten-3">
+								SOLD OUT
+							</button>
+						</div>
+					)}
+				</div>
 			</div>
 		);
 	}
