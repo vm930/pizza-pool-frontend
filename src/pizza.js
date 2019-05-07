@@ -22,12 +22,12 @@ class Pizza extends React.PureComponent {
 		return (
 			<div className="container" className="row" className="col s12 m6">
 				<div className="container">
-					<Timer fetchDelete={this.fetchDelete} />
-					<span>Pizza: {this.props.pizza.name}</span>
-					<img
-						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdj2sMYwRV7t0kF9DKH6LrKDFeQdW1SNIZh3fUgwmH-1TcXu"
-						alt="picture of a pizza"
-					/>
+					<Timer fetchDelete={this.fetchDelete} /><br/>
+						<div class="loading-container">
+							<div class="spinner"></div>
+							<div class="spinner-center"></div>
+							<div class="loading-text">{this.props.pizza.name}</div>
+						</div>
 				</div>
 
 				<div className="container">
