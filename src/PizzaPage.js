@@ -9,19 +9,18 @@ import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
 class PizzaPage extends Component {
-	constructor(){
-		super()
+	constructor() {
+		super();
 		this.state = {
 			pizzas: [],
 			newPizzas: [],
 			modalIsOpen: false
-	};
+		};
 
-	this.openModal = this.openModal.bind(this);
-	this.afterOpenModal = this.afterOpenModal.bind(this);
-  this.closeModal = this.closeModal.bind(this);
-}
-
+		this.openModal = this.openModal.bind(this);
+		this.afterOpenModal = this.afterOpenModal.bind(this);
+		this.closeModal = this.closeModal.bind(this);
+	}
 
 	componentDidMount() {
 		fetch('http://localhost:3000/pizzas').then((res) => res.json()).then((data) =>
@@ -32,19 +31,17 @@ class PizzaPage extends Component {
 	}
 
 	openModal() {
-    this.setState({modalIsOpen: true});
-  }
+		this.setState({ modalIsOpen: true });
+	}
 
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    console.log("in modal")
-  }
+	afterOpenModal() {
+		// references are now sync'd and can be accessed.
+		console.log('in modal');
+	}
 
-  closeModal() {
-    this.setState({modalIsOpen: false});
-  }
-
-
+	closeModal() {
+		this.setState({ modalIsOpen: false });
+	}
 
 	addPizza = (newPizza) => {
 		fetch('http://localhost:3000/pizzas', {
@@ -117,15 +114,14 @@ class PizzaPage extends Component {
 	render() {
 		return (
 			<div>
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          contentLabel="Example Modal"
-        >
-				<NewPizza addPizza={this.addPizza} />
-			</Modal>
-				<Nav openModal={this.openModal}/>
+				<Modal
+					isOpen={this.state.modalIsOpen}
+					onAfterOpen={this.afterOpenModal}
+					onRequestClose={this.closeModal}
+				>
+					<NewPizza addPizza={this.addPizza} />
+				</Modal>
+				<Nav openModal={this.openModal} />
 				<Switch>
 					<Route
 						path="/"

@@ -9,7 +9,7 @@ class Pizza extends React.PureComponent {
 	};
 
 	componentWillUnmount(nextProps, nextState) {
-		console.log('unMounting')
+		console.log('unMounting');
 	}
 
 	fetchDelete = () => {
@@ -26,15 +26,16 @@ class Pizza extends React.PureComponent {
 		return (
 			<div className="container" className="row" className="col s12 m6">
 				<div className="container">
-					<Timer fetchDelete={this.fetchDelete} /><br/>
-						<div class="loading-container">
-							<div class="spinner"></div>
-							<div class="spinner-center"></div>
-							<div class="loading-text">{this.props.pizza.name}</div>
-						</div>
+					<Timer fetchDelete={this.fetchDelete} />
+					<br />
+					<div class="loading-container">
+						<div class="spinner" />
+						<div class="spinner-center" />
+						<div class="loading-text">{this.props.pizza.name}</div>
+					</div>
 				</div>
 
-				<div className="container">
+				<div className="sliceInfo" className="container">
 					<span>Who's eating This bad boi:</span>
 					<span>
 						<UserIndex slices={this.props.pizza.pizza_slices} />

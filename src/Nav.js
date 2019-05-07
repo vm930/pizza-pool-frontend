@@ -9,12 +9,11 @@ class Nav extends Component {
 		this.M = window.M;
 	}
 
-
 	handleClick = () => {
-		this.props.openModal()
-	}
+		this.props.openModal();
+	};
 	render() {
-		console.log(this.props)
+		console.log(this.props);
 		return (
 			<div>
 				<nav>
@@ -28,8 +27,8 @@ class Nav extends Component {
 							<li>
 								<Link to="/login">Log In</Link>
 							</li>
-							<li onClick={this.handleClick}>
-								Make New Slice
+							<li>
+								<a onClick={this.handleClick}>Make New Slice</a>
 							</li>
 						</ul>
 					</div>

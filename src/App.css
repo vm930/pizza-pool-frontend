@@ -44,47 +44,51 @@ h3 {
 }
 
 @keyframes spinner {
-  100% {
-    transform: rotate(3600deg);
-  }
+	100% {
+		transform: rotate(3600deg);
+	}
 }
 
 .loading-container {
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-  /* top: 50vh;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+	/* top: 50vh;
   transform: translateY(-50%); */
 }
 
 .spinner {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  background: url('/pizza-pepperoni.jpg') center center;
-  background-size: contain;
-  transition-origin: 50% 50%;
-  animation: spinner 25s infinite alternate ease-in-out;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	background: url('/pizza-pepperoni.jpg') center center;
+	background-size: contain;
+	transition-origin: 50% 50%;
+	animation: spinner 15s infinite alternate ease-in-out;
 }
 .spinner-center {
-  display: inline-block;
-  position: absolute;
-  margin-left: -100px;
-  width: 100px;
-  height: 100px;
-  background: url('') center center;
-  background-size: contain;
-  content: '';
+	display: inline-block;
+	position: absolute;
+	margin-left: -100px;
+	width: 100px;
+	height: 100px;
+	background: url('') center center;
+	background-size: contain;
+	content: '';
 }
 
 .loading-text {
-  position: relative;
-  z-index: 1;
-  font-size: 1.5rem;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  margin-left: 0.5em;
+	position: relative;
+	z-index: 1;
+	font-size: 1.5rem;
+	font-family: 'Alfa Slab One', cursive;
+	margin-left: 0.5em;
 }
 
 .ReactModal__Overlay {
-    z-index: 1000;
+	z-index: 1000;
+}
+
+#loginPage {
+	margin: 15%;
 }
