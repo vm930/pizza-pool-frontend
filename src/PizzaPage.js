@@ -92,7 +92,7 @@ class PizzaPage extends Component {
 			<div>
 				<Nav />
 				<Switch>
-					<Route path="/new" render={() => <NewPizza addPizza={this.addPizza} />} />
+					<Route path="/new" render={(props) => <NewPizza addPizza={this.addPizza} {...props} />} />
 					<Route
 						path="/"
 						render={() => (
