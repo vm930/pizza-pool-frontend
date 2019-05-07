@@ -9,12 +9,12 @@ class LogIn extends Component {
 		this.setState({
 			user: e.target.value
 		});
-		// console.log(e.target.value);
 	};
 
 	handleSubmit = (e) => {
 		e.preventDefault();
 		this.props.getUser(this.state.user);
+		this.props.history.push('/');
 	};
 
 	render() {
