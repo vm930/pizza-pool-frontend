@@ -19,7 +19,7 @@ class Timer extends React.PureComponent {
     render(){
       return(
         <div>
-          {this.state.delivered ? <h4>Out For Delivery</h4> : <Countdown date={Date.now() + 10000} onComplete={this.handleComplete}/>}
+          {this.state.delivered ? <h4>Out For Delivery</h4> : <Countdown date={Date.now() + 300000} onComplete={this.handleComplete}/>}
         </div>
       )
     }
