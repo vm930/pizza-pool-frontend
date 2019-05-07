@@ -33,7 +33,6 @@ class PizzaPage extends Component {
 	};
 
 	getPizza = (pizzaClicked) => {
-
 		//update the pizzaslices
 		const foundPizza = this.state.pizzas.find((pizza) => pizza.id === pizzaClicked.id);
 
@@ -56,16 +55,16 @@ class PizzaPage extends Component {
 					fetch(`http://localhost:3000/pizza_slices/${newSlices[pizzaIndex].id}`, {
 						method: 'PATCH',
 						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify({name: foundPizza.Name,
+						body: JSON.stringify({
+							name: foundPizza.Name,
 							price: foundPizza.price,
 							vegan: foundPizza.vegan,
-							pizza_slices:
-									{
-									slices: newSlices[pizzaIndex].slices + 1,
-									user_name: this.props.currentUser.name
-									}
-							})
-					})
+							pizza_slices: {
+								slices: newSlices[pizzaIndex].slices + 1,
+								user_name: this.props.currentUser.name
+							}
+						})
+					});
 					const replaceSlice = { ...newSlices[pizzaIndex], slices: newSlices[pizzaIndex].slices + 1 };
 
 					newSlices[pizzaIndex] = replaceSlice;
@@ -80,33 +79,34 @@ class PizzaPage extends Component {
 					// 	slices: 1,
 					// 	user_name: this.props.currentUser
 					// });
-				}else{
-					const newPizzaSlice =  fetch('http://localhost:3000/pizza_slices', {
+				} else {
+					const newPizzaSlice = fetch('http://localhost:3000/pizza_slices', {
 						method: 'POST',
 						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify({user_id: this.props.currentUser.id,
-						pizza_id: pizzaClicked.id})
-					})
-					newSlices.push({slices: 1, user_name: this.props.currentUser.name})
-					console.log('pizzaslices', newSlices)
+						body: JSON.stringify({
+							user_id: this.props.currentUser.id,
+							pizza_id: pizzaClicked.id
+						})
+					});
+					newSlices.push({ slices: 1, user_name: this.props.currentUser.name });
+					console.log('pizzaslices', newSlices);
 
 					return { ...pizza, pizza_slices: newSlices };
 
-						// this.addPizza({name: foundPizza.Name,
-						// 	price: foundPizza.price,
-						// 	vegan: foundPizza.vegan,
-						// 	pizza_slices:
-						// 			{
-						// 			slices: 1,
-						// 			user_name: this.props.currentUser.name
-						// 			}
-						// 	})
+					// this.addPizza({name: foundPizza.Name,
+					// 	price: foundPizza.price,
+					// 	vegan: foundPizza.vegan,
+					// 	pizza_slices:
+					// 			{
+					// 			slices: 1,
+					// 			user_name: this.props.currentUser.name
+					// 			}
+					// 	})
 				}
 			} else {
 				return pizza;
 			}
 		});
-
 
 		this.setState({
 			pizzas: newPizzas
@@ -131,7 +131,6 @@ class PizzaPage extends Component {
 	};
 
 	render() {
-
 		return (
 			<div>
 				<Nav />
