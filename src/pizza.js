@@ -8,6 +8,10 @@ class Pizza extends React.PureComponent {
 		this.props.getPizza(this.props.pizza);
 	};
 
+	componentWillUnmount(nextProps, nextState) {
+		console.log('unMounting')
+	}
+
 	fetchDelete = () => {
 		fetch(`http://localhost:3000/pizzas/${this.props.pizza.id}`, {
 			method: 'DELETE',

@@ -4,12 +4,24 @@ import PizzaDex from './PizzaDex';
 import M from 'materialize-css'; //important for css
 import NewPizza from './NewPizza';
 import { Route, Switch } from 'react-router-dom';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 
 class PizzaPage extends Component {
-	state = {
-		pizzas: [],
-		newPizzas: []
+	constructor(){
+		super()
+		this.state = {
+			pizzas: [],
+			newPizzas: [],
+			modalIsOpen: false
 	};
+
+	this.openModal = this.openModal.bind(this);
+	this.afterOpenModal = this.afterOpenModal.bind(this);
+  this.closeModal = this.closeModal.bind(this);
+}
+
 
 	componentDidMount() {
 		fetch('http://localhost:3000/pizzas').then((res) => res.json()).then((data) =>
@@ -18,6 +30,21 @@ class PizzaPage extends Component {
 			})
 		);
 	}
+
+	openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    console.log("in modal")
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+
+
 
 	addPizza = (newPizza) => {
 		fetch('http://localhost:3000/pizzas', {
@@ -90,9 +117,16 @@ class PizzaPage extends Component {
 	render() {
 		return (
 			<div>
-				<Nav />
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          contentLabel="Example Modal"
+        >
+				<NewPizza addPizza={this.addPizza} />
+			</Modal>
+				<Nav openModal={this.openModal}/>
 				<Switch>
-					<Route path="/new" render={(props) => <NewPizza addPizza={this.addPizza} {...props} />} />
 					<Route
 						path="/"
 						render={() => (

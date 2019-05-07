@@ -44,7 +44,7 @@ class NewPizza extends Component {
 			price: 0
 		});
 
-		this.props.history.push('/');
+		// this.props.history.push('/');
 	};
 
 	render() {
