@@ -20,10 +20,10 @@ class Nav extends Component {
 						/>
 						<ul id="nav-mobile" className="right hide-on-med-and-down">
 							<li>
-								<Link to="/login">Sign In</Link>
+								<Link to="/login">Log In</Link>
 							</li>
 							<li>
-								<a href="collapsible.html">JavaScript</a>
+								<Link to="/new">Make New Slice</Link>
 							</li>
 						</ul>
 					</div>

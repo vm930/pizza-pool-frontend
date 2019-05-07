@@ -91,8 +91,19 @@ class PizzaPage extends Component {
 		return (
 			<div>
 				<Nav />
-				<NewPizza addPizza={this.addPizza} />
-				<PizzaDex pizzas={this.state.pizzas} getPizza={this.getPizza} currentUser={this.props.currentUser} />
+				<Switch>
+					<Route path="/new" render={(props) => <NewPizza addPizza={this.addPizza} {...props} />} />
+					<Route
+						path="/"
+						render={() => (
+							<PizzaDex
+								pizzas={this.state.pizzas}
+								getPizza={this.getPizza}
+								currentUser={this.props.currentUser}
+							/>
+						)}
+					/>
+				</Switch>
 			</div>
 		);
 	}

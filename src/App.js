@@ -46,8 +46,8 @@ class App extends React.Component {
 	render() {
 		return (
 			<Switch>
-				<Route exact path="/" render={() => <PizzaPage currentUser={this.state.user} />} />
 				<Route path="/login" render={(props) => <LogIn getUser={this.getUser} {...props} />} />
+				<Route path="/" render={() => <PizzaPage currentUser={this.state.user} />} />
 				{/* <Route path="/new" render={() => <NewPizza />} /> */}
 				{/* addPizza={this.addPizza} */}
 			</Switch>

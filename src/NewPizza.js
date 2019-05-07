@@ -43,10 +43,11 @@ class NewPizza extends Component {
 			vegan: false,
 			price: 0
 		});
+
+		this.props.history.push('/');
 	};
 
 	render() {
-		console.log('am i here?');
 		return (
 			<div>
 				<form className="container" onSubmit={this.handleFormSubmit}>
