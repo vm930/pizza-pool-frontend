@@ -51,6 +51,8 @@ class NewPizza extends Component {
 		return (
 			<div>
 				<form className="container" onSubmit={this.handleFormSubmit}>
+					<img className="pizzaSignIn" src="https://pbs.twimg.com/media/C3mkPs0WQAA-Ekh.jpg" />
+					<br />
 					<label>
 						Pizza Name:{' '}
 						<input name="pizzaName" type="text" value={this.state.pizzaName} onChange={this.handleChange} />

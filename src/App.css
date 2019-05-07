@@ -26,3 +26,19 @@
 	justify-content: center;
 	align-items: center;
 }
+
+h3 {
+	font-family: 'Alfa Slab One', cursive;
+}
+
+.pizzaLogin {
+	animation: App-logo-spin infinite 5s linear;
+	height: 10vmin;
+	pointer-events: none;
+}
+
+.pizzaSignIn {
+	margin: 5%;
+	height: 30%;
+	width: 30%;
+}
