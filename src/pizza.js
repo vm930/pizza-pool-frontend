@@ -36,7 +36,12 @@ class Pizza extends React.PureComponent {
 						<UserIndex slices={this.props.pizza.pizza_slices} />
 					</span>
 					<i className="comment icon" />
+				<p>
 					Slices Remaining: {8 - pizzaSliceArray.reduce(reducer)}
+				</p>
+				<p>
+					Price per Slice: ${(this.props.pizza.price/pizzaSliceArray.reduce(reducer)).toFixed(2)}
+				</p>
 				</div>
 
 				{8 - pizzaSliceArray.reduce(reducer, 0) > 0 ? (
