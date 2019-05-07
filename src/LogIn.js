@@ -20,7 +20,11 @@ class LogIn extends Component {
 	render() {
 		return (
 			<div>
-				<h3>welcome to PizzaPool</h3>
+				<h3>Welcome to PizzaPool</h3>
+				<img
+					className="pizzaLogin"
+					src="http://pngriver.com/wp-content/uploads/2018/04/Download-Pizza-PNG-Picture.png"
+				/>
 				<form onSubmit={this.handleSubmit}>
 					<input onChange={this.handleChange} type="text" value={this.state.user} />
 					<input type="submit" />

@@ -10,11 +10,11 @@ class Pizza extends React.PureComponent {
 
 	fetchDelete = () => {
 		fetch(`http://localhost:3000/pizzas/${this.props.pizza.id}`, {
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(this.props.pizza)
-    })
-	}
+			method: 'DELETE',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(this.props.pizza)
+		});
+	};
 
 	render() {
 		const pizzaSliceArray = this.props.pizza.pizza_slices.map((pizza) => pizza.slices);
@@ -35,22 +35,19 @@ class Pizza extends React.PureComponent {
 					<span>
 						<UserIndex slices={this.props.pizza.pizza_slices} />
 					</span>
-					<i className="comment icon" />
-				<p>
-					Slices Remaining: {8 - pizzaSliceArray.reduce(reducer)}
-				</p>
-				<p>
-					Price per Slice: ${(this.props.pizza.price/pizzaSliceArray.reduce(reducer)).toFixed(2)}
-				</p>
+					<p>Slices Remaining: {8 - pizzaSliceArray.reduce(reducer)}</p>
+					<p>Price per Slice: ${(this.props.pizza.price / pizzaSliceArray.reduce(reducer)).toFixed(2)}</p>
 				</div>
 
 				{8 - pizzaSliceArray.reduce(reducer, 0) > 0 ? (
-					<button
-						onClick={this.handleClick}
-						className="container waves-effect waves-light btn-large deep-orange"
-					>
-						I want a Slice!
-					</button>
+					<div className="sliceButton">
+						<button
+							onClick={this.handleClick}
+							className="container waves-effect waves-light btn-large deep-orange"
+						>
+							I want a Slice!
+						</button>
+					</div>
 				) : null}
 			</div>
 		);

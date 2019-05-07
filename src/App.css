@@ -4,8 +4,6 @@
 	pointer-events: none;
 }
 
-
-
 @keyframes App-logo-spin {
 	from {
 		transform: rotate(0deg);
@@ -14,9 +12,35 @@
 		transform: rotate(360deg);
 	}
 }
+
 .container {
 	text-align: center;
 	justify-content: center;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+		sans-serif;
+	color: balck;
+}
+
+.sliceButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h3 {
+	font-family: 'Alfa Slab One', cursive;
+}
+
+.pizzaLogin {
+	animation: App-logo-spin infinite 5s linear;
+	height: 10vmin;
+	pointer-events: none;
+}
+
+.pizzaSignIn {
+	margin: 5%;
+	height: 30%;
+	width: 30%;
 }
 
 @keyframes spinner {
