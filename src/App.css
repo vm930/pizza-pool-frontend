@@ -4,8 +4,6 @@
 	pointer-events: none;
 }
 
-
-
 @keyframes App-logo-spin {
 	from {
 		transform: rotate(0deg);
@@ -14,7 +12,17 @@
 		transform: rotate(360deg);
 	}
 }
+
 .container {
 	text-align: center;
 	justify-content: center;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+		sans-serif;
+	color: balck;
+}
+
+.sliceButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
