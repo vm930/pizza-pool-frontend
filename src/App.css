@@ -84,3 +84,7 @@ h3 {
   font-family: "Comic Sans MS", cursive, sans-serif;
   margin-left: 0.5em;
 }
+
+.ReactModal__Overlay {
+    z-index: 1000;
+}
