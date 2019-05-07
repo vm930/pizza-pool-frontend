@@ -46,6 +46,7 @@ class NewPizza extends Component {
 	};
 
 	render() {
+		console.log('am i here?');
 		return (
 			<div>
 				<form className="container" onSubmit={this.handleFormSubmit}>

@@ -3,6 +3,8 @@ import './App.css';
 import PizzaPage from './PizzaPage';
 import 'materialize-css/dist/css/materialize.min.css';
 import LogIn from './LogIn';
+import { Route, Switch } from 'react-router-dom';
+// import NewPizza from './NewPizza';
 
 class App extends React.Component {
 	//this is adding materialized to React
@@ -43,10 +45,12 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<LogIn getUser={this.getUser} />
-				<PizzaPage currentUser={this.state.user} />
-			</div>
+			<Switch>
+				<Route exact path="/" render={() => <PizzaPage currentUser={this.state.user} />} />
+				<Route path="/login" render={(props) => <LogIn getUser={this.getUser} {...props} />} />
+				{/* <Route path="/new" render={() => <NewPizza />} /> */}
+				{/* addPizza={this.addPizza} */}
+			</Switch>
 		);
 	}
 }

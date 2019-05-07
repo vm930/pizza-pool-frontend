@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
+import { Link } from 'react-router-dom';
 
 class Nav extends Component {
 	//import this for Materialized UI
@@ -19,7 +20,7 @@ class Nav extends Component {
 						/>
 						<ul id="nav-mobile" className="right hide-on-med-and-down">
 							<li>
-								<a href="badges.html">Components</a>
+								<Link to="/login">Sign In</Link>
 							</li>
 							<li>
 								<a href="collapsible.html">JavaScript</a>
@@ -28,7 +29,6 @@ class Nav extends Component {
 					</div>
 				</nav>
 			</div>
-			
 		);
 	}
 }
