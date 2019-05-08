@@ -425,6 +425,7 @@ h3 {
 
 .card-content {
 	text-align: center;
+	font-weight: 500;
 }
 
 .pizzaIndex {
@@ -445,4 +446,5 @@ h3 {
 
 .timerContainer {
 	color: #dd2c00;
+	letter-spacing: 5px;
 }
